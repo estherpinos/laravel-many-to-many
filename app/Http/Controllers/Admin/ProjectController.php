@@ -41,7 +41,7 @@ class ProjectController extends Controller
         $new_project = new Project();
         $new_project->title =$form_data['title'];
         $new_project->description =$form_data['description'];
-        $new_project->type =$form_data['type'];
+        $new_project->type =$form_data['type_id'];
 
 
 
