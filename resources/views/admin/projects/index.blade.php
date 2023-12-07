@@ -25,7 +25,13 @@
             <td>{{$project->title}}</td>
             <td>{{$project->description}}</td>
             <td>{{$project->type->title}}</td>
-            <td>{{$project->technologies->id}}</td>
+            <td>
+                @forelse ($project->technologies->take(1) as $technology )
+                {{$technology->id}}
+
+            @empty
+
+            @endforelse</td>
 
 
 
