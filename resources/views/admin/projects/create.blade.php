@@ -50,7 +50,7 @@
             <div class="mb-3">
                 <select name="technology_id" class="form-select" id="technology_id">
                     @foreach ($technologies as $technology )
-                        <option value="{{$type->id}}" {{old("type_id", $project?->type_id) == $type->id?'selected' : ''}}>{{$type->title}}</option>
+                        <option value="{{$technology->id}}" {{old("technology_id", $project?->technology_id) == $technology->id?'selected' : ''}}>{{$technology->id}}</option>
                     @endforeach
                   </select>
                   @error('technology')
