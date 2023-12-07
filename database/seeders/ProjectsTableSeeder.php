@@ -22,7 +22,6 @@ class ProjectsTableSeeder extends Seeder
     {
         for($i = 0; $i < 10; $i++) {
             $new_project = new Project();
-            // $new_project->type_id=Type::inRandomOrder()->first()->id;
 
             $new_project->type_id=Type::inRandomOrder()->first()->id;
             $new_project->title = $faker->sentence(3);

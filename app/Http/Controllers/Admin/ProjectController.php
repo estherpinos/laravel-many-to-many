@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\ProjectRequest;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 
 
 class ProjectController extends Controller
@@ -27,7 +28,8 @@ class ProjectController extends Controller
     {
         $project = null;
         $types = type::all();
-        return view('admin.projects.create', compact('project', 'types'));
+        $technologies= technology::all();
+        return view('admin.projects.create', compact('project', 'types', 'technologies'));
 
     }
 
@@ -42,6 +44,7 @@ class ProjectController extends Controller
         $new_project->title =$form_data['title'];
         $new_project->description =$form_data['description'];
         $new_project->type =$form_data['type_id'];
+        $new_project->type =$form_data['technology_id'];
 
 
 

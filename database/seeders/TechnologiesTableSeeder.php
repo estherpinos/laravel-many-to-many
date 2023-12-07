@@ -4,12 +4,12 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Tecnology;
+use App\Models\Technology;
 use Faker\Generator as Faker;
 
 
 
-class TecnologiesTableSeeder extends Seeder
+class TechnologiesTableSeeder extends Seeder
 {
      /**
      * Run the database seeds.
@@ -19,9 +19,9 @@ class TecnologiesTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         for($i = 0; $i < 10; $i++) {
-            $new_tecnology = new Tecnology();
-            $new_tecnology->title = $faker->sentence(4);
-            $new_tecnology->save();
+            $new_technology = new Technology();
+            $new_technology->title = $faker->sentence(4);
+            $new_technology->save();
         }
 
     }

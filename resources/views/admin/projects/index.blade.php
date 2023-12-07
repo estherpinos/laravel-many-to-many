@@ -11,6 +11,7 @@
         <th scope="col">Title</th>
         <th scope="col">Description</th>
         <th scope="col">Type</th>
+        <th scope="col">Technology</th>
         <th scope="col">Azioni</th>
 
       </tr>
@@ -24,6 +25,9 @@
             <td>{{$project->title}}</td>
             <td>{{$project->description}}</td>
             <td>{{$project->type->title}}</td>
+            <td>{{$project->technologies->id}}</td>
+
+
 
             <td>
                 <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-warning "><i class="fa-solid fa-eye"></i></a>

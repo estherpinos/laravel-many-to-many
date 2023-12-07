@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Tecnology;
+use App\Models\Technology;
 
-class TecnologyController extends Controller
+class TechnologyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $tecnologies = Tecnology::all();
-        return view('admin.tecnologies.index', compact('tecnologies'));
+        $tecnologies = Technology::all();
+        return view('admin.technologies.index', compact('technologies'));
     }
 
     /**
@@ -22,7 +22,7 @@ class TecnologyController extends Controller
      */
     public function create()
     {
-             return view('admin.tecnologies.create');
+             return view('admin.technologies.create');
 
     }
 
@@ -33,12 +33,12 @@ class TecnologyController extends Controller
     {
         $form_data = $request->all();
 
-        $new_tecnology = new Tecnology();
-        $new_tecnology->title =$form_data['title'];
+        $new_technology = new Technology();
+        $new_technology->title =$form_data['title'];
 
-        $new_tecnology->save();
+        $new_technology->save();
 
-        return redirect()->route('admin.tecnologies.show', $new_tecnology->id);
+        return redirect()->route('admin.technologies.show', $new_technology->id);
 
     }
 
@@ -47,8 +47,8 @@ class TecnologyController extends Controller
      */
     public function show(string $id)
     {
-        $tecnology = Tecnology::find($id);
-        return view('admin.tecnologies.show', compact('tecnology'));
+        $tecnology = Technology::find($id);
+        return view('admin.technologies.show', compact('technology'));
     }
 
     /**

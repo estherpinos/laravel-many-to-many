@@ -38,7 +38,7 @@ class TypeController extends Controller
 
         $new_type->save();
 
-        return redirect()->route('admin.tecnologies.show', $new_type->id);
+        return redirect()->route('admin.technologies.show', $new_type->id);
 
     }
 
